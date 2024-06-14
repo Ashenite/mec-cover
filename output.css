@@ -5,7 +5,6 @@
 @page {
   size: A4;
 }
-
 .popup{
   display: block;
   position: fixed;
@@ -22,7 +21,7 @@
   height: 90vh;
   overflow-x: hidden;
   overflow-y: auto;
-
+  
 }
 .popup .cross{
   float: right;
@@ -41,25 +40,25 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-}
-
-.content {
-  width: 100%;
-  max-width: 210mm; /* A4 width */
-  margin: 0 0;
-  background-color: #fff;
-}
-
-h1, p {
-  margin: 0 0 1em;
+  }
+  
+  .content {
+    width: 100%;
+    max-width: 210mm; /* A4 width */
+    margin: 0 0;
+    background-color: #fff;
+    }
+    
+    h1, p {
+      margin: 0 0 1em;
 }
 
 @media print {
   /* Hide print button when printing */
   button {
-      display: none;
-  }
-}
+    display: none;
+    }
+    }
 
 *{
     font-family: 'Poppins', sans-serif;
@@ -67,15 +66,15 @@ h1, p {
     padding: 0;
     text-transform: uppercase;
     font-size: 17px;
-}
-.deptm .h2{
+    }
+    .deptm .h2{
     text-align: center;
     font-size: 34px;
     font-weight: 600;
     color: rgb(13, 51, 140);
     margin-top: 10px;
     margin-bottom: 2px;
-}
+    }
 .container .logo{
   display: flex;
   justify-content: center;
@@ -83,10 +82,10 @@ h1, p {
 }
 .container .logo img{
   width: 1.8in;
-}
-.dept{
-  background: linear-gradient(90deg,rgb(67, 102, 215), rgb(13, 51, 140) );
-  width: fit-content;
+  }
+  .dept{
+    background: linear-gradient(90deg,rgb(67, 102, 215), rgb(13, 51, 140) );
+    width: fit-content;
   padding: 0 20px;
   height: 40px;
   border-radius: 9px;
@@ -97,21 +96,21 @@ h1, p {
   align-items: center;
   height: 40px;
   color: white;
-}
-.courseinfo{
-  text-align: center;
-}
+  }
+  .courseinfo{
+    text-align: center;
+    }
 .courseinfo .crscode{
   margin-top: 30px;
   margin-bottom: 0;
-}
+  }
 .courseinfo .workno{
   margin-top: 50px;
-}
+  }
 .courseinfo table th{
   text-align: center;
 
-}
+  }
 .courseinfo table{
   display: flex;
   justify-content: center;
@@ -122,16 +121,16 @@ h1, p {
 }
 .courseinfo table td{
   width: 380px;
-}
-.courseinfo table td:nth-child(2){
-  width: 250px;
-  padding-left: 20px;
-  border-left: 2.5px solid rgb(13, 51, 140);
-  padding-right: 20px;
-}
-
-.topics{
-  height: auto;
+  }
+  .courseinfo table td:nth-child(2){
+    width: 250px;
+    padding-left: 20px;
+    border-left: 2.5px solid rgb(13, 51, 140);
+    padding-right: 20px;
+    }
+    
+    .topics{
+      height: auto;
   width: fit-content;
   max-width: 600px;
   border: 2px solid rgb(39, 39, 181);
@@ -152,18 +151,27 @@ h1, p {
   text-align: center;
   width: 140px;
   border-top: 1px solid rgb(39, 39, 181);
-}
-.footer span{
-  color: rgb(51, 51, 177);
-}
-
-.print_btn{
-  background-color: #45A049!important;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  margin-right: 20px;
+  }
+  .footer span{
+    color: rgb(51, 51, 177);
+    }
+    
+    .print_btn{
+      background-color: #45A049!important;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-right: 20px;
 }
 .print_btn:focus{
   box-shadow: inset 3px 3px 5px #484848;
+  }
+
+
+
+  
+@media screen and (max-width: 400px) {
+  .popup{
+    right: 33px;
+  }
 }
