@@ -1,11 +1,52 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Alatsi&family=Archivo+Black&family=Belanosima:wght@400;600&family=Hind+Siliguri:wght@600&family=Mulish:wght@200&family=Poppins:wght@200;400;800;900&display=swap');
 
 @page {
   size: A4;
 }
-.popup{
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #071615;
+  padding: 10px 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.logo-h {
+  margin-right: 20px;
+}
+
+.title {
+  flex-grow: 1;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+      font-size: 14px;
+  }
+  
+  .title {
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+}
+@media (max-width: 430px){
+  .title{
+    font-size: 17px;
+  }
+}
+
+
+
+
+.popup {
   display: block;
   position: fixed;
   top: 0;
@@ -21,9 +62,20 @@
   height: 90vh;
   overflow-x: hidden;
   overflow-y: auto;
-  
 }
-.popup .cross{
+
+.popup .cross:first-child {
+  background-color: rgb(240, 143, 143);
+  color: rgb(139, 6, 6);
+}
+
+.popup .cross:last-child {
+  background-color: rgb(143, 240, 151);
+  color: rgb(10, 139, 6);
+}
+
+
+.popup .cross {
   float: right;
   display: flex;
   justify-content: center;
@@ -40,78 +92,95 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  }
-  
-  .content {
-    width: 100%;
-    max-width: 210mm; /* A4 width */
-    margin: 0 0;
-    background-color: #fff;
-    }
-    
-    h1, p {
-      margin: 0 0 1em;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  width: 100%;
+  max-width: 210mm;
+  /* A4 width */
+  margin: 0 0;
+  background-color: #fff;
+}
+
+h1,
+p {
+  margin: 0 0 1em;
 }
 
 @media print {
+
   /* Hide print button when printing */
   button {
     display: none;
-    }
-    }
+  }
+}
 
-*{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    text-transform: uppercase;
-    font-size: 17px;
-    }
-    .deptm .h2{
-    text-align: center;
-    font-size: 34px;
-    font-weight: 600;
-    color: rgb(13, 51, 140);
-    margin-top: 10px;
-    margin-bottom: 2px;
-    }
-.container .logo{
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+.deptm .h2 {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 600;
+  color: rgb(13, 51, 140);
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+
+.container .logo {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 38px;
 }
-.container .logo img{
+
+.container .logo img {
   width: 1.8in;
-  }
-  .dept{
-    background: linear-gradient(90deg,rgb(67, 102, 215), rgb(13, 51, 140) );
-    width: fit-content;
+}
+
+.dept {
+  background: linear-gradient(90deg, rgb(67, 102, 215), rgb(13, 51, 140));
+  width: fit-content;
   padding: 0 20px;
   height: 40px;
   border-radius: 9px;
   margin: auto;
-  margin-top: 20px;
+  margin-top: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 40px;
   color: white;
-  }
-  .courseinfo{
-    text-align: center;
-    }
-.courseinfo .crscode{
+}
+
+.courseinfo {
+  text-align: center;
+}
+
+.courseinfo .crscode {
   margin-top: 30px;
   margin-bottom: 0;
-  }
-.courseinfo .workno{
+}
+.courseinfo .crsname {
+  text-transform: none;
+}
+
+.courseinfo .workno {
   margin-top: 50px;
-  }
-.courseinfo table th{
+  margin-bottom: 5px;
+}
+
+.courseinfo table th {
   text-align: center;
 
-  }
-.courseinfo table{
+}
+
+.courseinfo table {
   display: flex;
   justify-content: center;
   border-collapse: collapse;
@@ -119,59 +188,155 @@ body {
   text-align: left;
   margin-top: 70px;
 }
-.courseinfo table td{
+
+.courseinfo table td {
   width: 380px;
-  }
-  .courseinfo table td:nth-child(2){
-    width: 250px;
-    padding-left: 20px;
-    border-left: 2.5px solid rgb(13, 51, 140);
-    padding-right: 20px;
-    }
-    
-    .topics{
-      height: auto;
+}
+
+.courseinfo table td:nth-child(2) {
+  width: 250px;
+  padding-left: 20px;
+  border-left: 2.5px solid rgb(13, 51, 140);
+  padding-right: 20px;
+}
+.courseinfo #cname{
+  text-transform:none !important;
+}
+
+.topics {
+  height: auto;
   width: fit-content;
   max-width: 600px;
   border: 2px solid rgb(39, 39, 181);
-  margin: auto;
+  margin: 10px auto;
   border-radius: 7px;
 }
-.footer{
+.topi{
+  margin: 0 10px;
+}
+
+.footer {
   display: flex;
   justify-content: center;
   margin-top: 100px;
 }
-.footer table{
+
+.footer table {
   border-collapse: collapse;
   width: 680px;
   border: transparent;
 }
-.footer table td:nth-child(2){
+
+.footer table td:nth-child(2) {
   text-align: center;
   width: 140px;
   border-top: 1px solid rgb(39, 39, 181);
-  }
-  .footer span{
-    color: rgb(51, 51, 177);
-    }
-    
-    .print_btn{
-      background-color: #45A049!important;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      margin-right: 20px;
 }
-.print_btn:focus{
+
+.footer span {
+  color: rgb(51, 51, 177);
+}
+
+.print_btn {
+  background-color: #45A049 !important;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.print_btn:focus {
   box-shadow: inset 3px 3px 5px #484848;
-  }
+}
 
 
 
-  
-@media screen and (max-width: 400px) {
-  .popup{
+
+@media screen and (max-width: 700px) {
+  .popup {
     right: 33px;
   }
+  .input{
+    margin: 10px 40px 10px 20px;
+  }
 }
+@media screen and (min-width: 800px) {
+  .input{
+    margin: 0 25%;
+  }
+  .popup{
+    width: 60%;
+    right: 20%;
+  }
+}
+
+
+body{
+  margin:0;
+  overflow-x:hidden;
+  }
+  
+  .footer{
+  background:#071615;
+  padding:30px 0px;
+  font-family: 'Play', sans-serif;
+  text-align:center;
+  }
+  
+  .footer .row{
+  width:100%;
+  margin:1% 0%;
+  padding:0.6% 0%;
+  color:gray;
+  font-size:0.8em;
+  }
+  
+  .footer .row li{
+    cursor: pointer;
+  text-decoration:none;
+  color:gray;
+  transition:0.1s;
+  }
+  
+  .footer .row li:hover{
+  color:#fff;
+  }
+  
+  .footer .row a{
+  text-decoration:none;
+  color:gray;
+  transition:0.1s;
+  }
+  
+  .footer .row a:hover{
+  color:#fff;
+  }
+  
+  .footer .row ul{
+  width:100%;
+  }
+  
+  .footer .row ul li{
+  display:inline-block;
+  margin:0px 30px;
+  }
+  
+  .footer .row a i{
+  font-size:2em;
+  margin:0% 1%;
+  }
+  
+  @media (max-width:720px){
+  .footer{
+  text-align:left;
+  padding:5%;
+  }
+  .footer .row ul li{
+  display:block;
+  margin:10px 0px;
+  text-align:left;
+  }
+  .footer .row a i{
+  margin:0% 3%;
+  }
+  }

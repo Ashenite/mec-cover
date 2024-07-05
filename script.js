@@ -1,3 +1,31 @@
+// Teachers
+const teachers = {
+    Md_Alamgir_Hossain: `Md. Alamgir Hossain <br> Principal<br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Md_Rafiqul_Islam: `Md. Rafiqul Islam <br> Associate Professor (Mathematics) and Head of Department (Non-Tech) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    SM_Anowarul_Haque: `S. M. Anowarul Haque <br> Assistant Professor and Head of Department (EEE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Rownak_Ara_Chowdhury: `Rownak Ara Chowdhury <br> Assistant Professor and Head of Department (CSE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Khaleda_Ferdousi: `Khaleda Ferdousi <br> Assistant Professor (CSE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Md_Khalilur_Rahman: `Md. Khalilur Rahman <br> Assistant Professor (Chemistry) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Muhammad_Abdus_Sattar_Titu: `Muhammad Abdus Sattar Titu <br> Assistant Professor (Mathematics) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Jebunnesa_Roma: `Jebunnesa Roma <br> Assistant Professor (Physics) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Sabuj_Ahmed: `Sabuj Ahmed <br> Assistant Professor (EEE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Abdul_Wahed: `Abdul Wahed <br> Lecturer (EEE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Md_Nazrul_Islam: `Md. Nazrul Islam <br> Lecturer (CSE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Md_Nuruzzaman: `Md. Nuruzzaman <br> Lecturer (CE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Md_Salah_Uddin: `Md. Salah Uddin <br> Lecturer (EEE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Ozifatun_Jannat_Akhi: `Ozifatun Jannat Akhi <br> Lecturer (CSE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Tahia_Rabbee: `Tahia Rabbee <br> Lecturer (CE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Mrinal_Kanti_Roy: `Mrinal Kanti Roy <br> Lecturer (Chemistry) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Mahfujur_Rahman_Resel: `Mahfujur Rahman Resel <br> Lecturer (Mathematics) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Sabrina_Sattar_Setu: `Sabrina Sattar Setu <br> Lecturer (CSE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Mahabubul_Imam_Majumder: `Mahabubul Imam Majumder <br> Lecturer (Physics) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Jenia_Shultana: `Jenia Shultana <br> Lecturer (CE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Susanta_Dev_Nath: `Susanta Dev Nath <br> Lecturer (EEE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Muhammad_Saqibul_Amin: `Muhammad Saqibul Amin <br> Lecturer (Social Science)<br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Abdullah_Al_Mahin: `Abdullah Al Mahin <br> Lecturer (CE)<br><span style="font-size:14px;">Mymensingh Engineering College</span>`
+};
+
+
 // Get form and elements for displaying the cover page details
 const form = document.getElementById('cover-page-form');
 const departmenttt = document.getElementById('department-2');
@@ -39,15 +67,29 @@ form.addEventListener('submit', (event) => {
     // Update the cover page with form data
     departmenttt.innerHTML = `${department}`;
     coursecode.innerHTML = `${courseCode}`;
+    if(coursecode.innerHTML == ""){
+        coursecode.style.marginRight = "400px"
+    }
     courdename.innerHTML = `${courseName}`;
+    if(courdename.innerHTML == ""){
+        courdename.style.marginRight = "400px"
+    }
     expno.innerHTML = `${expNo}`;
     expname.innerHTML = `${expName}`;
+    if(expname.innerHTML == ""){
+        expname.style.width = "600px"
+        expname.style.height = "85px"
+    }
     nameee.innerHTML = `${name}`;
     reginooo.innerHTML = `${regiNo}`;
     sessionnn.innerHTML = `${session}`;
     rolll.innerHTML = `${roll}`;
     batchhh.innerHTML = `${batch}`;
-    cteacherrr.innerHTML = `${cTeacher}`;
+    for (let key in teachers) {
+        if (key === cTeacher) {
+            cteacherrr.innerHTML = teachers[key];
+        }
+    }
     subdate.innerHTML = `${subDate}`;
     expdateee.innerHTML = `${expDate}`;
 });
@@ -79,9 +121,9 @@ document.getElementById('saveAsPdfBtn').addEventListener('click', function () {
     // Configure the PDF options
     var opt = {
         margin: 0.5,
-        filename: 'cover_page.pdf',
+        filename: `${coursecode.innerHTML}_cover_page.pdf`,
         image: { type: 'png', quality: 1 },
-        html2canvas: { scale: 2 },
+        html2canvas: { scale: 1.5 },
         jsPDF: { unit: 'in', format: 'A4', orientation: 'portrait' }
     };
     
