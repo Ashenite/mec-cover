@@ -215,25 +215,25 @@ p {
   margin: 0 10px;
 }
 
-.footer {
+.footerr {
   display: flex;
   justify-content: center;
   margin-top: 100px;
 }
 
-.footer table {
+.footerr table {
   border-collapse: collapse;
   width: 680px;
   border: transparent;
 }
 
-.footer table td:nth-child(2) {
+.footerr table td:nth-child(2) {
   text-align: center;
   width: 140px;
   border-top: 1px solid rgb(39, 39, 181);
 }
 
-.footer span {
+.footerr span {
   color: rgb(51, 51, 177);
 }
 
