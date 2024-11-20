@@ -41,6 +41,7 @@ const batchhh = document.getElementById('batch-2');
 const cteacherrr = document.getElementById('cTeacher');
 const subdate = document.getElementById('subDate');
 const expdateee = document.getElementById('expDate');
+const expdatblank = document.getElementById('exp-blank');
 
 // Add event listener to the form to handle submission
 form.addEventListener('submit', (event) => {
@@ -61,6 +62,8 @@ form.addEventListener('submit', (event) => {
     const roll = formData.get('roll');
     const batch = formData.get('batch');
     const cTeacher = formData.get('course-teacher');
+    const tNameExtra = formData.get('teacher-name');
+    const tDesExtra = formData.get('teacher-des');
     const subDate = formData.get('submission-date');
     const expDate = formData.get('experiment-date');
 
@@ -85,13 +88,26 @@ form.addEventListener('submit', (event) => {
     sessionnn.innerHTML = `${session}`;
     rolll.innerHTML = `${roll}`;
     batchhh.innerHTML = `${batch}`;
-    for (let key in teachers) {
-        if (key === cTeacher) {
-            cteacherrr.innerHTML = teachers[key];
+    if (document.getElementById('ext-teacher').checked) {
+        if (tNameExtra && tDesExtra) {
+            cteacherrr.innerHTML = `${tNameExtra} <br> ${tDesExtra} <br> <span style="font-size:14px;">Mymensingh Engineering College</span>`;
+        } else {
+            cteacherrr.innerHTML = "Please provide the teacher's name and designation.";
         }
-    }
+    } else {
+        if (cTeacher) {
+            cteacherrr.innerHTML = teachers[cTeacher] || "Teacher not found.";
+        } else {
+            cteacherrr.innerHTML = "No teacher selected.";
+        }
+    }  
+    
     subdate.innerHTML = `${subDate}`;
-    expdateee.innerHTML = `${expDate}`;
+    if(expDate == ""){ 
+        expdatblank.style.display = "none";
+    }else{
+        expdateee.innerHTML = `${expDate}`;
+    }
 });
 
 // Function to preview the cover page
@@ -131,3 +147,54 @@ document.getElementById('saveAsPdfBtn').addEventListener('click', function () {
     html2pdf().from(element).set(opt).save();
     console.log("PDF generated and saved.");
 });
+
+
+function check() {
+    const teacherNameExtra = document.getElementById('teacher-name-exs');
+    const teacherDesExtra = document.getElementById('teacher-des-exs');
+    const extTeacher = document.getElementById('ext-teacher');
+
+    if (document.getElementById('ext-teacher').checked) {
+        teacherNameExtra.style.display = 'block';
+        teacherDesExtra.style.display = 'block';
+        document.getElementById('course-teacher').disabled = true;
+    }
+    else {
+        teacherNameExtra.style.display = 'none';
+        teacherDesExtra.style.display = 'none';
+        document.getElementById('course-teacher').disabled = false;
+    }
+}
+function mecCpg2ShowPopup() {
+    document.getElementById('mec-cpg-popup').style.display = 'block';
+}
+
+function mecCpg2HidePopup() {
+    document.getElementById('mec-cpg-popup').style.display = 'none';
+}
+
+// Function to toggle labels based on selected type
+function toggleLabels() {
+    const labReportRadio = document.getElementById('lab-report');
+    const assignmentRadio = document.getElementById('assignment');
+    const expNoLabel = document.querySelector('label[for="experiment-no"]');
+    const expNameLabel = document.querySelector('label[for="experiment-name"]');
+    const workNoDiv = document.querySelector('.workno');
+    const workNmDiv = document.querySelector('.worknm');
+
+    if (labReportRadio.checked) {
+        expNoLabel.innerHTML = 'Experiment No.:';
+        expNameLabel.innerHTML = 'Experiment Name:';
+        workNoDiv.innerHTML = 'Experiment no: <span id="expNo"></span>';
+        workNmDiv.innerHTML = 'Experiment Name:';
+    } else if (assignmentRadio.checked) {
+        expNoLabel.innerHTML = 'Assignment No.:';
+        expNameLabel.innerHTML = 'Assignment Name:';
+        workNoDiv.innerHTML = 'Assignment no: <span id="expNo"></span>';
+        workNmDiv.innerHTML = 'Assignment Name:';
+    }
+}
+
+// Add event listeners to radio buttons
+document.getElementById('lab-report').addEventListener('change', toggleLabels);
+document.getElementById('assignment').addEventListener('change', toggleLabels);
