@@ -179,7 +179,7 @@ function toggleLabels() {
     const assignmentRadio = document.getElementById('assignment');
     const expNoLabel = document.querySelector('label[for="experiment-no"]');
     const expNameLabel = document.querySelector('label[for="experiment-name"]');
-    const workNoDiv = document.querySelector('.workno');
+    const workNoDiv = document.querySelector('.exa');
     const workNmDiv = document.querySelector('.worknm');
 
     if (labReportRadio.checked) {
