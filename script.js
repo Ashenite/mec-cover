@@ -185,12 +185,12 @@ function toggleLabels() {
     if (labReportRadio.checked) {
         expNoLabel.innerHTML = 'Experiment No.:';
         expNameLabel.innerHTML = 'Experiment Name:';
-        workNoDiv.innerHTML = 'Experiment no: ';
+        workNoDiv.innerHTML = 'Experiment no: <span id="expNo"></span>';
         workNmDiv.innerHTML = 'Experiment Name:';
     } else if (assignmentRadio.checked) {
         expNoLabel.innerHTML = 'Assignment No.:';
         expNameLabel.innerHTML = 'Assignment Name:';
-        workNoDiv.innerHTML = 'Assignment no: <span id="expNo"></span>';
+        workNoDiv.innerHTML = 'Assignment no: ';
         workNmDiv.innerHTML = 'Assignment Name:';
     }
 }
