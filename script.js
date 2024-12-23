@@ -198,3 +198,21 @@ function toggleLabels() {
 // Add event listeners to radio buttons
 document.getElementById('lab-report').addEventListener('change', toggleLabels);
 document.getElementById('assignment').addEventListener('change', toggleLabels);
+
+
+
+function openPopupPrivacyTerms() {
+    const popup = document.getElementById("popupPrivacyTerms");
+    popup.style.display = "block";
+    popup.classList.remove("fadeOut", "slideUp");
+    popup.classList.add("fadeIn", "slideDown");
+}
+
+function closePopupPrivacyTerms() {
+    const popup = document.getElementById("popupPrivacyTerms");
+    popup.classList.remove("fadeIn", "slideDown");
+    popup.classList.add("fadeOut", "slideUp");
+    setTimeout(() => {
+        popup.style.display = "none";
+    }, 50);
+}
