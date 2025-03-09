@@ -256,8 +256,8 @@ select {
   background-image: url(https://www.shareicon.net/data/2015/12/06/195629_minus_256x256.png);
 }
 
-.form-group:nth-child(14),
-.form-group:nth-child(15) {
+.form-group:nth-child(15),
+.form-group:nth-child(16) {
   background-color: #bae7bc;
   border-radius: 10px;
   padding: 6px;
@@ -265,9 +265,10 @@ select {
 }
 
 /* Custom Radio Buttons */
-.form-group:nth-child(4){
+.form-group:nth-child(2),.form-group:nth-child(5){
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 input[type="radio"] {
   appearance: none;
@@ -323,7 +324,6 @@ input[type="radio"]:hover {
 
 label[for="lab-report"],
 label[for="assignment"] {
-  margin-left: 10px;
   cursor: pointer;
   font-size: 16px;
   color: #333;

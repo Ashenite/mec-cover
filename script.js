@@ -1,7 +1,9 @@
 // Teachers
 const teachers = {
-    Md_Alamgir_Hossain: `Md. Alamgir Hossain <br> Principal<br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    prof_Dr_Engr_Md_Mizanur_Rahman: `Prof. Dr. Engr. Md. Mizanur Rahman <br> Principal<br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Abdur_Rouf: `Abdur Rouf <br> 	Associate Professor (CSE) & Academic Incharge<br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
     Md_Rafiqul_Islam: `Md. Rafiqul Islam <br> Associate Professor (Mathematics) and Head of Department (Non-Tech) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
+    Dr_Atikur_Rahman_Baizid: `Dr. Atikur Rahman Baizid <br> Associate Professor (Physics) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
     SM_Anowarul_Haque: `S. M. Anowarul Haque <br> Assistant Professor and Head of Department (EEE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
     Rownak_Ara_Chowdhury: `Rownak Ara Chowdhury <br> Assistant Professor and Head of Department (CSE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
     Khaleda_Ferdousi: `Khaleda Ferdousi <br> Assistant Professor (CSE) <br><span style="font-size:14px;">Mymensingh Engineering College</span>`,
@@ -138,9 +140,18 @@ document.getElementById('saveAsPdfBtn').addEventListener('click', function () {
     var opt = {
         margin: 0.5,
         filename: `${coursecode.innerHTML}_cover_page.pdf`,
-        image: { type: 'png', quality: 1 },
-        html2canvas: { scale: 1.5 },
-        jsPDF: { unit: 'in', format: 'A4', orientation: 'portrait' }
+        image: { type: 'jpeg', quality: 1 }, // Use JPEG for better compression
+        html2canvas: { 
+            scale: 1, // Lower scale to reduce resolution
+            useCORS: true, // Enable cross-origin images
+            logging: false, // Disable logging for performance
+        },
+        jsPDF: { 
+            unit: 'in', 
+            format: 'A4', 
+            orientation: 'portrait', 
+            compress: true, // Enable PDF compression
+        }
     };
     
     // Generate the PDF and save it
@@ -216,3 +227,24 @@ function closePopupPrivacyTerms() {
         popup.style.display = "none";
     }, 50);
 }
+
+
+// main or individual
+document.querySelectorAll('input[name="category"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        const category = this.value;
+
+        if (category === "Regular") {
+            document.querySelectorAll('#mainH').forEach(element => {
+                element.style.display = 'none';
+            });
+            document.querySelectorAll('#mainS').forEach(element => {
+                element.style.display = 'block';
+            });
+        } else {
+            document.querySelectorAll('#mainH').forEach(element => {
+                element.style.display = ''; // Reset to default display
+            });
+        }
+    });
+});
