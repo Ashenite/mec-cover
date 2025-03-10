@@ -245,6 +245,9 @@ document.querySelectorAll('input[name="category"]').forEach(radio => {
             document.querySelectorAll('#mainH').forEach(element => {
                 element.style.display = ''; // Reset to default display
             });
+            document.querySelectorAll('#mainS').forEach(element => {
+                element.style.display = '';
+            });
         }
     });
 });
