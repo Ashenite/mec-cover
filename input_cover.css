@@ -1,0 +1,265 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+	font-family: "Nunito", sans-serif;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    /* background: linear-gradient(135deg, #edfbff, #ffffff); */
+    background:url() ;
+    color: #1d5c5c;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hide category */
+#category {
+    display: none;
+}
+
+/* Container for the form */
+#dept, #semester-container, #course, #experiment-assignment, #student-info, #teacher-info, #date-selection, #submit-button {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 600px;
+}
+
+#dept:hover, #semester-container:hover, #course:hover, #experiment-assignment:hover, #student-info:hover, #teacher-info:hover, #date-selection:hover, #submit-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #357e7e;
+}
+
+/* Radio Buttons as Small Buttons */
+.options {
+    display: flex;/* Stack options vertically */
+    justify-content: space-between;
+    background: rgba(189, 189, 189, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 600px;
+}
+@media (max-width: 480px) {
+    .options #type label, .options #category label {
+        display: flex;
+        flex-direction: column;
+        font-size: 13px
+    }
+}
+
+.option2, .option3 {
+    display: flex;
+    flex-direction: row; /* Stack options vertically */
+    gap: 8px; /* Smaller gap */
+}
+
+.option2 div, .option3 div {
+    display: flex;
+    align-items: center;
+}
+
+input[type="radio"] {
+    appearance: none; /* Remove default radio button */
+    position: absolute;
+}
+
+input[type="radio"] + label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px; /* Smaller padding */
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(53, 126, 126, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 14px; /* Smaller font size */
+}
+
+input[type="radio"]:checked + label {
+    background: rgba(53, 126, 126, 0.3);
+    border-color: #357e7e;
+    transform: translateY(-2px);
+}
+
+input[type="radio"] + label:hover {
+    background: rgba(53, 126, 126, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Input Fields */
+input[type="text"], input[type="number"], input[type="date"], select {
+    width: 100%;
+    padding: 8px; /* Smaller padding */
+    margin-bottom: 15px;
+    border: 1px solid rgba(53, 126, 126, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #1d5c5c;
+    transition: border-color 0.3s ease, background 0.3s ease;
+    font-size: 14px; /* Smaller font size */
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="date"]:focus, select:focus {
+    border-color: #357e7e;
+    background: rgba(255, 255, 255, 0.4);
+    outline: none;
+}
+
+/* Buttons */
+button {
+    background: #357e7e;
+    color: white;
+    border: none;
+    padding: 8px 16px; /* Smaller padding */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 14px; /* Smaller font size */
+}
+
+button:hover {
+    background: #1d5c5c;
+    transform: translateY(-2px);
+}
+
+/* Remove Assignment Button */
+#removeAssignment {
+    color: #357e7e;
+    display: block;
+    transition: color 0.3s ease;
+    float: right;padding: 5px 15px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    margin-top: -7px;
+}
+
+#removeAssignment:hover {
+    color: #1d5c5c;
+}
+
+/* Teacher Info Section */
+#teacher-info {
+    position: relative;
+}
+
+/* Add Teacher Manually Checkbox */
+#manual-teacher {
+    appearance: none; /* Remove default checkbox */
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#manual-teacher + label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(53, 126, 126, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 14px;
+}
+
+#manual-teacher:checked + label {
+    background: rgba(53, 126, 126, 0.3);
+    border-color: #357e7e;
+    transform: translateY(-2px);
+}
+
+#manual-teacher + label::before {
+    content: "\f067"; /* FontAwesome plus icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #357e7e;
+}
+
+#manual-teacher:checked + label::before {
+    content: "\f00c"; /* FontAwesome check icon */
+}
+
+/* Manual Teacher Fields */
+#manual-teacher-fields {
+    margin-top: 15px;
+}
+
+/* Suggestions List */
+#suggestions, #teacher-suggestion {
+    margin-top: 10px;
+}
+
+#suggestions ul, #teacher-suggestion div {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#suggestions li, #teacher-suggestion div {
+    padding: 8px; /* Smaller padding */
+    margin: 5px 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-size: 12px; /* Smaller font size */
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+#suggestions li:hover, #teacher-suggestion div:hover {
+    background: rgba(53, 126, 126, 0.3);
+    transform: translateX(5px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#dept, #semester-container, #course, #experiment-assignment, #student-info, #teacher-info, #date-selection, #submit-button {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+}

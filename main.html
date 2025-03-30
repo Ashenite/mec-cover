@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="main.css">
+    <script src="main.js" defer></script>
+    <title>Cover Page Generator</title>
+</head>
+
+<body>
+    <div class="container">
+        <img src="images/logo.svg" alt="Logo" class="logo">
+
+        <div class="selectMainType">
+            <label class="heading">What would you like to generate?</label>
+            <div class="option1">
+                <div class="coverD">
+                    <input type="radio" id="cover" name="mainType" value="cover" required>
+                    <label for="cover"> <i class="fa-solid fa-book"></i><br> Cover Page </label>
+                </div>
+                <div class="indexD">
+                    <input type="radio" id="index" name="mainType" value="index" required>
+                    <label for="index"> <i class="fa-solid fa-table-list"></i> <br> Index Page</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Lab/Assignment Selection -->
+        <div id="labAssignment" style="display: none;">
+            <br>
+            <label>Select the type:</label>
+            <div class="option2">
+                <div>
+                    <input type="radio" id="labReport" name="labAssignment" value="Lab" required>
+                    <label for="labReport"><i class="fa-solid fa-flask"></i> Lab Report</label>
+                </div>
+                <div>
+                    <input type="radio" id="assignment" name="labAssignment" value="Assignment" required>
+                    <label for="assignment"><i class="fa-solid fa-list-check"></i> Assignment</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cover Page Type Selection -->
+        <div id="category" style="display: none;">
+            <br>
+            <label>Select the type of cover page:</label>
+            <div class="option2">
+                <div>
+                    <input type="radio" id="regular" name="category" value="Regular" required>
+                    <label for="regular">Main Cover</label>
+                </div>
+                <div>
+                    <input type="radio" id="irregular" name="category" value="Irregular" required>
+                    <label for="irregular">Individual Cover</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="next-container">
+            <button id="nextButton">
+                Next <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

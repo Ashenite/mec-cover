@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="input_cover.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+
+    
+    <div class="options">
+        <div id="type">
+            <label>Select Category</label>
+            <div class="option2">
+                <div>
+                    <input type="radio" id="labReport" name="type" value="Lab" required>
+                    <label for="labReport"><i class="fa-solid fa-book"></i> Lab Report</label>
+                </div>
+                <div>
+                    <input type="radio" id="assignment" name="type" value="Assignment" checked required>
+                    <label for="assignment"><i class="fa-solid fa-list-check"></i>Assignment</label>
+                </div>
+            </div>
+        </div>
+        <div id="category">
+            <label>Select type</label>
+            <div class="option2">
+                <div>
+                    <input type="radio" id="regular" name="category" value="Regular" required>
+                    <label for="regular"> <i class="fa-solid fa-book"></i>Main Cover</label>
+                </div>
+                <div>
+                    <input type="radio" id="irregular" name="category" value="Irregular" required>
+                    <label for="irregular"><i class="fa-solid fa-file-lines"></i>Individual Cover</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dept">
+        <label>Department</label>
+        <div class="option3">
+            <div>
+                <input type="radio" id="EEE" name="dept" value="EEE" required checked>
+                <label for="EEE"><i class="fa-solid fa-bolt-lightning"></i>EEE</label>
+            </div>
+            <div>
+                <input type="radio" id="CSE" name="dept" value="CSE" required>
+                <label for="CSE"><i class="fa-solid fa-terminal"></i>CSE</label>
+            </div>
+            <input type="radio" id="CE" name="dept" value="CE" required>
+            <label for="CE"><i class="fa-solid fa-helmet-safety"></i>CE</label>
+        </div>
+    </div>
+    </div>
+    <div id="semester-container">
+        <label for="semester">Select Semester:</label>
+        <select id="semester" name="semester" required>
+            <option value="" disabled selected>Select your semester</option>
+            <option value="1">1st Semester</option>
+            <option value="2">2nd Semester</option>
+            <option value="3">3rd Semester</option>
+            <option value="4">4th Semester</option>
+            <option value="5">5th Semester</option>
+            <option value="6">6th Semester</option>
+            <option value="7">7th Semester</option>
+            <option value="8">8th Semester</option>
+        </select>
+    </div>
+    <div id="course">
+        <label for="courseCode">Course Code:</label>
+        <input type="text" id="courseCode" name="courseCode" placeholder="Enter course code" required>
+        <label for="courseName">Course Name:</label>
+        <input type="text" id="courseName" name="courseName" placeholder="Enter course name" required>
+        <div id="suggestions"></div>
+    </div>
+    <div id="experiment-assignment">
+        <div id="experiment-container" style="display: none;">
+            <label for="experimentNo">Experiment No:</label>
+            <input type="text" id="experimentNo" name="experimentNo" placeholder="Enter experiment number">
+            <label for="experimentName">Experiment Name:</label>
+            <input type="text" id="experimentName" name="experimentName" placeholder="Enter experiment name">
+        </div>
+        <div id="assignment-container" style="display: none;">
+            <label for="assignmentNo">Assignment No:</label>
+            <input type="text" id="assignmentNo" name="assignmentNo" placeholder="Enter assignment number">
+            <button type="button" id="removeAssignment" style="background: none; border: none; cursor: pointer;">
+                <i class="fa-solid fa-xmark"></i> Remove assignment no
+            </button>
+            <label for="assignmentName">Assignment Name:</label>
+            <input type="text" id="assignmentName" name="assignmentName" placeholder="Enter assignment name">
+        </div>
+    </div>
+    <div id="student-info">
+        <label for="studentName">Name:</label>
+        <input type="text" id="studentName" name="studentName" placeholder="Enter your name" required>
+
+        <div>
+            <label for="rollNo">Roll No:</label>
+            <input type="number" id="rollNo" name="rollNo" placeholder="Enter your roll number" required>
+        </div>
+
+        <div>
+            <label for="registrationNo">Registration No:</label>
+            <input type="text" id="registrationNo" name="registrationNo" placeholder="Enter your registration number"
+                required>
+        </div>
+
+        <div>
+            <label for="session">Session:</label>
+            <select id="session" name="session" required>
+                <option value="" disabled selected>Select your session</option>
+                <option value="17-18">2017-2018</option>
+                <option value="18-19">2018-2019</option>
+                <option value="19-20">2019-2020</option>
+                <option value="20-21">2020-2021</option>
+                <option value="21-22">2021-2022</option>
+                <option value="22-23">2022-2023</option>
+                <option value="23-24">2023-2024</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="batch">Batch:</label>
+            <input type="text" id="batch" name="batch" placeholder="Batch will auto-fill">
+        </div>
+    </div>
+
+    <div id="teacher-info">
+        <label for="course-teacher">Course Teacher:</label>
+        <div class="form-group ct">
+            <select name="course-teacher" class="course-teacher" id="course-teacher">
+                <option value="">Select Teacher</option>
+            </select>
+        </div>
+        <!-- Checkbox for manually adding a teacher -->
+        <div>
+            <input type="checkbox" id="manual-teacher" name="manual-teacher">
+            <label for="manual-teacher">Add Teacher Manually</label>
+        </div>
+        <div id="teacher-suggestion"></div>
+        <!-- Fields for manually adding teacher -->
+        <div id="manual-teacher-fields" style="display: none;">
+            <label for="teacher-name">Teacher Name:</label>
+            <input type="text" id="teacher-name" name="teacher-name">
+            <label for="teacher-designation">Designation:</label>
+            <input type="text" id="teacher-designation" name="teacher-designation">
+        </div>
+    </div>
+
+    <div id="date-selection">
+        <div>
+            <label for="experimentDate">Experiment Date:</label>
+            <input type="date" id="experimentDate" name="experimentDate" required>
+        </div>
+        <div>
+            <label for="submissionDate">Submission Date:</label>
+            <input type="date" id="submissionDate" name="submissionDate" required>
+        </div>
+    </div>
+    <div id="submit-button">
+        <button type="submit">Submit</button>
+    </div>
+    <!-- <script src="course_teacher.js"></script> -->
+    <script src="courses.js"></script>
+    <script src="input_cover.js"></script>
+</body>
+
+</html>
