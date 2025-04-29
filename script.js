@@ -43,7 +43,7 @@ const batchhh = document.getElementById('batch-2');
 const cteacherrr = document.getElementById('cTeacher');
 const subdate = document.getElementById('subDate');
 const expdateee = document.getElementById('expDate');
-const expdatblank = document.getElementById('exp-blank');
+const expdatblank = document.getElementById('mainH2');
 
 // Add event listener to the form to handle submission
 form.addEventListener('submit', (event) => {
